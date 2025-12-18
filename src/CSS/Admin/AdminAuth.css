@@ -1,0 +1,1162 @@
+/* src/components/admin/AdminAuth.css */
+
+/* Base Theme Variables */
+.SoleiTic-Admin-Auth-container {
+  --primary-gold: #d4af37;
+  --primary-gold-dark: #b8951c;
+  --primary-dark: #1a1a2e;
+  --secondary-dark: #16213e;
+  --accent-blue: #0f3460;
+  --light-text: #ffffff;
+  --dark-text: #2d3748;
+  --light-bg: #f8f9fa;
+  --dark-bg: #121212;
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius: 12px;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark Theme Variables */
+.SoleiTic-Admin-Auth-container.dark {
+  --bg-primary: var(--dark-bg);
+  --bg-secondary: var(--primary-dark);
+  --text-primary: var(--light-text);
+  --text-secondary: #a0aec0;
+  --card-bg: var(--secondary-dark);
+  --border-color: #2d3748;
+  --shadow: var(--shadow-dark);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --hover-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Light Theme Variables */
+.SoleiTic-Admin-Auth-container.light {
+  --bg-primary: var(--light-bg);
+  --bg-secondary: #e5e7eb;
+  --text-primary: var(--dark-text);
+  --text-secondary: #4a5568;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --shadow: var(--shadow-light);
+  --input-bg: #ffffff;
+  --hover-bg: #f7fafc;
+}
+
+/* Container Styles */
+.SoleiTic-Admin-Auth-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  margin-top: 4rem;
+}
+
+.SoleiTic-Admin-Auth-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.SoleiTic-Admin-watch-3d {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: SoleiTic-Admin-watch-float 6s ease-in-out infinite;
+}
+
+/* 3D Watch Animation */
+.SoleiTic-Admin-watch-background {
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes SoleiTic-Admin-watch-float {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(15deg) rotateY(0);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(15deg) rotateY(10deg);
+  }
+}
+
+.SoleiTic-Admin-watch-face {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.1),
+    rgba(212, 175, 55, 0.05)
+  );
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 60px rgba(212, 175, 55, 0.3),
+    0 20px 80px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.SoleiTic-Admin-watch-dial {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: SoleiTic-Admin-watch-rotate 60s linear infinite;
+}
+
+.SoleiTic-Admin-watch-hour-mark {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: var(--primary-gold);
+  top: 20px;
+  left: calc(50% - 2px);
+  transform-origin: 50% 130px;
+}
+
+.SoleiTic-Admin-watch-hour-mark:nth-child(1) {
+  transform: rotate(30deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(2) {
+  transform: rotate(60deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(3) {
+  transform: rotate(90deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(4) {
+  transform: rotate(120deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(5) {
+  transform: rotate(150deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(6) {
+  transform: rotate(180deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(7) {
+  transform: rotate(210deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(8) {
+  transform: rotate(240deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(9) {
+  transform: rotate(270deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(10) {
+  transform: rotate(300deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(11) {
+  transform: rotate(330deg);
+}
+.SoleiTic-Admin-watch-hour-mark:nth-child(12) {
+  transform: rotate(360deg);
+}
+
+.SoleiTic-Admin-watch-hands {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-top: -4rem;
+}
+
+.SoleiTic-Admin-watch-hour,
+.SoleiTic-Admin-watch-minute,
+.SoleiTic-Admin-watch-second {
+  position: absolute;
+  background: var(--primary-gold);
+  transform-origin: 50% 100%;
+  left: calc(50% - 2px);
+  top: 50%;
+  border-radius: 4px;
+}
+
+.SoleiTic-Admin-watch-hour {
+  width: 6px;
+  height: 80px;
+  transform: rotate(90deg);
+  animation: SoleiTic-Admin-hour-rotate 43200s linear infinite;
+}
+
+.SoleiTic-Admin-watch-minute {
+  width: 4px;
+  height: 100px;
+  transform: rotate(180deg);
+  animation: SoleiTic-Admin-minute-rotate 3600s linear infinite;
+}
+
+.SoleiTic-Admin-watch-second {
+  width: 2px;
+  height: 120px;
+  background: #ef4444;
+  animation: SoleiTic-Admin-second-rotate 60s linear infinite;
+}
+
+
+/* Card Styles */
+.SoleiTic-Admin-Auth-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: 0 20px 60px var(--shadow), 0 0 0 1px rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.SoleiTic-Admin-Auth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px var(--shadow), 0 0 0 1px rgba(212, 175, 55, 0.2);
+}
+
+/* Header Styles */
+.SoleiTic-Admin-Auth-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.SoleiTic-Admin-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.SoleiTic-Admin-logo-icon {
+  font-size: 2.5rem;
+  color: var(--primary-gold);
+}
+
+.SoleiTic-Admin-logo-text {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(
+    135deg,
+    var(--primary-gold),
+    var(--primary-gold-dark)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.SoleiTic-Admin-Auth-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.SoleiTic-Admin-Auth-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Form Styles */
+.SoleiTic-Admin-Auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.SoleiTic-Admin-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.SoleiTic-Admin-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.SoleiTic-Admin-form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.SoleiTic-Admin-form-input,
+.SoleiTic-Admin-form-select {
+  padding: 0.875rem 1rem;
+  background: var(--input-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: var(--transition);
+  outline: none;
+}
+
+.SoleiTic-Admin-form-input:focus,
+.SoleiTic-Admin-form-select:focus {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.SoleiTic-Admin-form-input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Checkbox Styles */
+.SoleiTic-Admin-form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.SoleiTic-Admin-form-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--input-bg);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.SoleiTic-Admin-form-checkbox input[type="checkbox"]:checked {
+  background: var(--primary-gold);
+  border-color: var(--primary-gold);
+  position: relative;
+}
+
+.SoleiTic-Admin-form-checkbox input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.SoleiTic-Admin-checkbox-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+/* Form Options */
+.SoleiTic-Admin-form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.SoleiTic-Admin-form-link {
+  color: var(--primary-gold);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.SoleiTic-Admin-form-link:hover {
+  color: var(--primary-gold-dark);
+  text-decoration: underline;
+}
+
+/* Advanced Options */
+.SoleiTic-Admin-advanced-toggle {
+  background: none;
+  border: none;
+  color: var(--primary-gold);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.SoleiTic-Admin-advanced-toggle:hover {
+  color: var(--primary-gold-dark);
+}
+
+.SoleiTic-Admin-advanced-section {
+  padding: 1.5rem;
+  background: var(--hover-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-top: 1rem;
+  animation: SoleiTic-Admin-fade-in 0.3s ease-out;
+}
+
+@keyframes SoleiTic-Admin-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.SoleiTic-Admin-advanced-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+/* Permissions Grid */
+.SoleiTic-Admin-permissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.SoleiTic-Admin-permission-module {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: var(--transition);
+}
+
+.SoleiTic-Admin-permission-module:hover {
+  border-color: var(--primary-gold);
+  transform: translateY(-2px);
+}
+
+.SoleiTic-Admin-permission-module-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.SoleiTic-Admin-permission-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.SoleiTic-Admin-permission-action {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  cursor: pointer;
+}
+
+.SoleiTic-Admin-permission-action input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+.SoleiTic-Admin-permission-action-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  user-select: none;
+  text-transform: capitalize;
+}
+
+/* Submit Button */
+.SoleiTic-Admin-Auth-submit {
+  background: linear-gradient(
+    135deg,
+    var(--primary-gold),
+    var(--primary-gold-dark)
+  );
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.SoleiTic-Admin-Auth-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.SoleiTic-Admin-Auth-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.SoleiTic-Admin-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: SoleiTic-Admin-spin 1s linear infinite;
+}
+
+@keyframes SoleiTic-Admin-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Footer Styles */
+.SoleiTic-Admin-Auth-footer {
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.SoleiTic-Admin-Auth-switch {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.SoleiTic-Admin-Auth-switch-button {
+  background: none;
+  border: none;
+  color: var(--primary-gold);
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: var(--transition);
+}
+
+.SoleiTic-Admin-Auth-switch-button:hover {
+  color: var(--primary-gold-dark);
+  text-decoration: underline;
+}
+
+.SoleiTic-Admin-security-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.SoleiTic-Admin-security-icon {
+  font-size: 1rem;
+}
+
+/* Success Message */
+.SoleiTic-Admin-success-message {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .SoleiTic-Admin-Auth-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .SoleiTic-Admin-watch-3d {
+    width: 300px;
+    height: 300px;
+  }
+
+  .SoleiTic-Admin-watch-face {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .SoleiTic-Admin-Auth-container {
+    padding: 1rem;
+  }
+
+  .SoleiTic-Admin-Auth-card {
+    padding: 2rem;
+  }
+
+  .SoleiTic-Admin-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .SoleiTic-Admin-permissions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .SoleiTic-Admin-Auth-card {
+    padding: 1.5rem;
+  }
+
+  .SoleiTic-Admin-Auth-title {
+    font-size: 1.5rem;
+  }
+
+  .SoleiTic-Admin-logo-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .SoleiTic-Admin-watch-background,
+  .SoleiTic-Admin-Auth-switch,
+  .SoleiTic-Admin-security-info {
+    display: none;
+  }
+
+  .SoleiTic-Admin-Auth-card {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}
+
+/* Fix only the watch hands positioning */
+.SoleiTic-Admin-watch-hands {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 29%;
+  left: 0;
+  z-index: 10;
+}
+
+.SoleiTic-Admin-watch-hour,
+.SoleiTic-Admin-watch-minute,
+.SoleiTic-Admin-watch-second {
+  position: absolute;
+  background: var(--primary-gold);
+  border-radius: 4px;
+  transform-origin: 50% 100%;
+  left: 50%;
+  top: 50%;
+}
+
+.SoleiTic-Admin-watch-hour {
+  width: 6px;
+  height: 60px;
+  margin-left: -3px;
+  margin-top: -60px;
+  transform: rotate(90deg);
+  animation: SoleiTic-Admin-hour-rotate 43200s linear infinite;
+}
+
+.SoleiTic-Admin-watch-minute {
+  width: 4px;
+  height: 80px;
+  margin-left: -2px;
+  margin-top: -80px;
+  transform: rotate(180deg);
+  animation: SoleiTic-Admin-minute-rotate 3600s linear infinite;
+}
+
+.SoleiTic-Admin-watch-second {
+  width: 2px;
+  height: 90px;
+  background: #ef4444;
+  margin-left: -1px;
+  margin-top: -90px;
+  animation: SoleiTic-Admin-second-rotate 60s linear infinite;
+}
+
+/* Add center dot */
+.SoleiTic-Admin-watch-face::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--primary-gold);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+/* Tablet (768px to 1024px) */
+@media (max-width: 1024px) {
+  .SoleiTic-Admin-Auth-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .SoleiTic-Admin-watch-3d {
+    width: 300px;
+    height: 300px;
+  }
+
+  .SoleiTic-Admin-watch-face {
+    width: 200px;
+    height: 200px;
+  }
+
+  .SoleiTic-Admin-watch-hour-mark {
+    transform-origin: 50% 100px;
+    height: 16px;
+  }
+
+  .SoleiTic-Admin-watch-hour {
+    width: 5px;
+    height: 45px;
+    margin-left: -2.5px;
+    margin-top: -45px;
+  }
+
+  .SoleiTic-Admin-watch-minute {
+    width: 3px;
+    height: 60px;
+    margin-left: -1.5px;
+    margin-top: -60px;
+  }
+
+  .SoleiTic-Admin-watch-second {
+    width: 1.5px;
+    height: 70px;
+    margin-left: -0.75px;
+    margin-top: -70px;
+  }
+
+  .SoleiTic-Admin-watch-face::after {
+    width: 10px;
+    height: 10px;
+  }
+
+  .SoleiTic-Admin-Auth-card {
+    padding: 2rem;
+  }
+
+  .SoleiTic-Admin-permissions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+/* Mobile (480px to 768px) */
+@media (max-width: 768px) {
+  .SoleiTic-Admin-Auth-container {
+    padding: 1rem;
+  }
+
+  .SoleiTic-Admin-watch-background {
+    order: 2;
+    margin-top: 2rem;
+  }
+
+  .SoleiTic-Admin-watch-3d {
+    width: 250px;
+    height: 250px;
+  }
+
+  .SoleiTic-Admin-watch-face {
+    width: 180px;
+    height: 180px;
+  }
+
+  .SoleiTic-Admin-watch-hour-mark {
+    transform-origin: 50% 90px;
+    height: 14px;
+    width: 3px;
+    top: 15px;
+  }
+
+  .SoleiTic-Admin-watch-hour {
+    width: 4px;
+    height: 40px;
+    margin-left: -2px;
+    margin-top: -40px;
+  }
+
+  .SoleiTic-Admin-watch-minute {
+    width: 2.5px;
+    height: 55px;
+    margin-left: -1.25px;
+    margin-top: -55px;
+  }
+
+  .SoleiTic-Admin-watch-second {
+    width: 1.2px;
+    height: 65px;
+    margin-left: -0.6px;
+    margin-top: -65px;
+  }
+
+  .SoleiTic-Admin-watch-face::after {
+    width: 8px;
+    height: 8px;
+  }
+
+  .SoleiTic-Admin-Auth-card {
+    padding: 1.5rem;
+  }
+
+  .SoleiTic-Admin-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .SoleiTic-Admin-permissions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .SoleiTic-Admin-Auth-title {
+    font-size: 1.5rem;
+  }
+
+  .SoleiTic-Admin-logo-text {
+    font-size: 1.5rem;
+  }
+
+  .SoleiTic-Admin-logo-icon {
+    font-size: 2rem;
+  }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .SoleiTic-Admin-Auth-container {
+    padding: 0.5rem;
+    min-height: 100vh;
+  }
+
+  .SoleiTic-Admin-watch-3d {
+    width: 200px;
+    height: 200px;
+  }
+
+  .SoleiTic-Admin-watch-face {
+    width: 150px;
+    height: 150px;
+  }
+
+  .SoleiTic-Admin-watch-hour-mark {
+    transform-origin: 50% 75px;
+    height: 12px;
+    width: 2px;
+    top: 12px;
+  }
+
+  .SoleiTic-Admin-watch-hour {
+    width: 3px;
+    height: 35px;
+    margin-left: -1.5px;
+    margin-top: -35px;
+  }
+
+  .SoleiTic-Admin-watch-minute {
+    width: 2px;
+    height: 50px;
+    margin-left: -1px;
+    margin-top: -50px;
+  }
+
+  .SoleiTic-Admin-watch-second {
+    width: 1px;
+    height: 60px;
+    margin-left: -0.5px;
+    margin-top: -60px;
+  }
+
+  .SoleiTic-Admin-watch-face::after {
+    width: 6px;
+    height: 6px;
+  }
+
+  .SoleiTic-Admin-Auth-card {
+    padding: 1rem;
+  }
+
+  .SoleiTic-Admin-Auth-title {
+    font-size: 1.3rem;
+  }
+
+  .SoleiTic-Admin-logo-text {
+    font-size: 1.3rem;
+  }
+
+  .SoleiTic-Admin-logo-icon {
+    font-size: 1.8rem;
+  }
+
+  .SoleiTic-Admin-form-input,
+  .SoleiTic-Admin-form-select {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .SoleiTic-Admin-Auth-submit {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Landscape Mobile (height less than 600px) */
+@media (max-height: 600px) and (orientation: landscape) {
+  .SoleiTic-Admin-Auth-container {
+    padding: 0.5rem;
+    min-height: auto;
+    height: auto;
+  }
+
+  .SoleiTic-Admin-Auth-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .SoleiTic-Admin-watch-3d {
+    width: 200px;
+    height: 200px;
+  }
+
+  .SoleiTic-Admin-watch-face {
+    width: 150px;
+    height: 150px;
+  }
+
+  .SoleiTic-Admin-Auth-card {
+    padding: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+/* Foldable/very small devices */
+@media (max-width: 320px) {
+  .SoleiTic-Admin-watch-3d {
+    width: 180px;
+    height: 180px;
+    display: non;
+  }
+
+  .SoleiTic-Admin-watch-face {
+    width: 130px;
+    height: 130px;
+  }
+
+  .SoleiTic-Admin-watch-hour-mark {
+    transform-origin: 50% 65px;
+    height: 10px;
+  }
+
+  .SoleiTic-Admin-watch-hour {
+    height: 30px;
+    margin-top: -30px;
+  }
+
+  .SoleiTic-Admin-watch-minute {
+    height: 45px;
+    margin-top: -45px;
+  }
+
+  .SoleiTic-Admin-watch-second {
+    height: 55px;
+    margin-top: -55px;
+  }
+
+  .SoleiTic-Admin-Auth-card {
+    padding: 0.75rem;
+  }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .SoleiTic-Admin-watch-face {
+    border-width: 1.5px;
+  }
+
+  .SoleiTic-Admin-watch-hour,
+  .SoleiTic-Admin-watch-minute,
+  .SoleiTic-Admin-watch-second {
+    border-radius: 2px;
+  }
+}
+
+/* Dark mode adjustments for mobile */
+@media (max-width: 768px) {
+  .SoleiTic-Admin-Auth-container.dark .SoleiTic-Admin-Auth-card {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .SoleiTic-Admin-Auth-container.light .SoleiTic-Admin-Auth-card {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Enhanced Error Styling */
+.SoleiTic-Admin-form-group.has-error .SoleiTic-Admin-form-input,
+.SoleiTic-Admin-form-group.has-error .SoleiTic-Admin-form-select {
+  border-color: var(--error);
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.SoleiTic-Admin-form-group.has-error .SoleiTic-Admin-form-input:focus,
+.SoleiTic-Admin-form-group.has-error .SoleiTic-Admin-form-select:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.SoleiTic-Admin-field-error {
+  color: var(--error);
+  font-size: 0.875rem;
+  margin-top: 0.375rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.SoleiTic-Admin-field-error::before {
+  content: "⚠️";
+  font-size: 0.75rem;
+}
+
+/* Password Strength Indicator */
+.SoleiTic-Admin-password-strength {
+  margin-top: 0.5rem;
+}
+
+.SoleiTic-Admin-strength-meter {
+  height: 4px;
+  background: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0.375rem;
+}
+
+.SoleiTic-Admin-strength-meter-fill {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-strength-meter-fill.weak {
+  width: 33%;
+  background: var(--error);
+}
+
+.SoleiTic-Admin-strength-meter-fill.medium {
+  width: 66%;
+  background: var(--warning);
+}
+
+.SoleiTic-Admin-strength-meter-fill.strong {
+  width: 100%;
+  background: var(--success);
+}
+
+.SoleiTic-Admin-strength-text {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.SoleiTic-Admin-strength-text.weak {
+  color: var(--error);
+}
+.SoleiTic-Admin-strength-text.medium {
+  color: var(--warning);
+}
+.SoleiTic-Admin-strength-text.strong {
+  color: var(--success);
+}
+
+.SoleiTic-Admin-password-requirements {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: var(--hover-bg);
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.SoleiTic-Admin-requirement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.375rem;
+  color: var(--text-secondary);
+}
+
+.SoleiTic-Admin-requirement.met {
+  color: var(--success);
+}
+
+.SoleiTic-Admin-requirement.met::before {
+  content: "✓";
+  color: var(--success);
+}
+
+.SoleiTic-Admin-requirement:not(.met)::before {
+  content: "○";
+  color: var(--text-secondary);
+}
+
+/* Real-time validation feedback */
+.SoleiTic-Admin-form-input:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: var(--error);
+}
+
+.SoleiTic-Admin-form-input:valid:not(:focus):not(:placeholder-shown) {
+  border-color: var(--success);
+}
+
+/* Error summary in modal */
+.SoleiTic-Admin-validation-errors,
+.SoleiTic-Admin-backend-validation {
+  text-align: left;
+}
+
+.SoleiTic-Admin-validation-errors ul,
+.SoleiTic-Admin-backend-validation ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.SoleiTic-Admin-validation-errors li,
+.SoleiTic-Admin-backend-validation li {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.SoleiTic-Admin-validation-errors strong,
+.SoleiTic-Admin-backend-validation strong {
+  color: var(--error);
+  text-transform: capitalize;
+}
+
+/* Update form groups to include error class */
+.SoleiTic-Admin-form-group {
+  position: relative;
+}
