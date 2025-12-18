@@ -1,0 +1,540 @@
+/* SoleiTic Footer Theme Variables */
+:root {
+  /* Light Theme Colors */
+  --SoleiTic-Footer-light-bg: #f8f9fa;
+  --SoleiTic-Footer-light-primary: #2c3e50;
+  --SoleiTic-Footer-light-secondary: #6c757d;
+  --SoleiTic-Footer-light-accent: #e74c3c;
+  --SoleiTic-Footer-light-hover: #e9ecef;
+  --SoleiTic-Footer-light-border: #dee2e6;
+  --SoleiTic-Footer-light-text: #495057;
+  --SoleiTic-Footer-light-card: #ffffff;
+  
+  /* Dark Theme Colors */
+  --SoleiTic-Footer-dark-bg: #1a1a1a;
+  --SoleiTic-Footer-dark-primary: #ecf0f1;
+  --SoleiTic-Footer-dark-secondary: #95a5a6;
+  --SoleiTic-Footer-dark-accent: #e74c3c;
+  --SoleiTic-Footer-dark-hover: #2d2d2d;
+  --SoleiTic-Footer-dark-border: #404040;
+  --SoleiTic-Footer-dark-text: #bdc3c7;
+  --SoleiTic-Footer-dark-card: #2d2d2d;
+  
+  /* Premium Colors */
+  --SoleiTic-Footer-gold: #d4af37;
+  --SoleiTic-Footer-silver: #c0c0c0;
+  --SoleiTic-Footer-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Main Footer Container */
+.SoleiTic-Footer-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.SoleiTic-Footer-light {
+  background: var(--SoleiTic-Footer-light-bg);
+  color: var(--SoleiTic-Footer-light-text);
+}
+
+.SoleiTic-Footer-dark {
+  background: var(--SoleiTic-Footer-dark-bg);
+  color: var(--SoleiTic-Footer-dark-text);
+}
+
+/* Main Footer Content */
+.SoleiTic-Footer-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+}
+
+.SoleiTic-Footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Brand Section */
+.SoleiTic-Footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.SoleiTic-Footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.SoleiTic-Footer-logo-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: var(--SoleiTic-Footer-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.SoleiTic-Footer-logo-subtitle {
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.SoleiTic-Footer-light .SoleiTic-Footer-logo-subtitle {
+  color: var(--SoleiTic-Footer-light-secondary);
+}
+
+.SoleiTic-Footer-dark .SoleiTic-Footer-logo-subtitle {
+  color: var(--SoleiTic-Footer-dark-secondary);
+}
+
+.SoleiTic-Footer-description {
+  line-height: 1.6;
+  font-size: 1rem;
+  max-width: 400px;
+}
+
+.SoleiTic-Footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.SoleiTic-Footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+}
+
+.SoleiTic-Footer-light .SoleiTic-Footer-social-link {
+  background: var(--SoleiTic-Footer-light-card);
+  color: var(--SoleiTic-Footer-light-primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.SoleiTic-Footer-dark .SoleiTic-Footer-social-link {
+  background: var(--SoleiTic-Footer-dark-card);
+  color: var(--SoleiTic-Footer-dark-primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.SoleiTic-Footer-social-link:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+.SoleiTic-Footer-light .SoleiTic-Footer-social-link:hover {
+  background: var(--SoleiTic-Footer-light-accent);
+  color: white;
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+}
+
+.SoleiTic-Footer-dark .SoleiTic-Footer-social-link:hover {
+  background: var(--SoleiTic-Footer-dark-accent);
+  color: white;
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+}
+
+/* Links Sections */
+.SoleiTic-Footer-links {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+
+.SoleiTic-Footer-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.SoleiTic-Footer-light .SoleiTic-Footer-section-title {
+  color: var(--SoleiTic-Footer-light-primary);
+}
+
+.SoleiTic-Footer-dark .SoleiTic-Footer-section-title {
+  color: var(--SoleiTic-Footer-dark-primary);
+}
+
+.SoleiTic-Footer-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--SoleiTic-Footer-gradient);
+  border-radius: 2px;
+}
+
+.SoleiTic-Footer-section-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.SoleiTic-Footer-section-link {
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 0;
+}
+
+.SoleiTic-Footer-light .SoleiTic-Footer-section-link {
+  color: var(--SoleiTic-Footer-light-text);
+}
+
+.SoleiTic-Footer-dark .SoleiTic-Footer-section-link {
+  color: var(--SoleiTic-Footer-dark-text);
+}
+
+.SoleiTic-Footer-section-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 1px;
+  background: var(--SoleiTic-Footer-gradient);
+  transition: width 0.3s ease;
+}
+
+.SoleiTic-Footer-section-link:hover {
+  padding-left: 1rem;
+}
+
+.SoleiTic-Footer-section-link:hover::before {
+  width: 0.5rem;
+}
+
+.SoleiTic-Footer-light .SoleiTic-Footer-section-link:hover {
+  color: var(--SoleiTic-Footer-light-accent);
+}
+
+.SoleiTic-Footer-dark .SoleiTic-Footer-section-link:hover {
+  color: var(--SoleiTic-Footer-dark-accent);
+}
+
+/* Newsletter Section */
+.SoleiTic-Footer-newsletter {
+  background: var(--SoleiTic-Footer-gradient);
+  border-radius: 20px;
+  padding: 3rem;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.SoleiTic-Footer-newsletter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(30%, -30%);
+}
+
+.SoleiTic-Footer-newsletter-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.SoleiTic-Footer-newsletter-text {
+  color: white;
+}
+
+.SoleiTic-Footer-newsletter-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.SoleiTic-Footer-newsletter-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  color: white;
+}
+
+.SoleiTic-Footer-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.SoleiTic-Footer-newsletter-input-group {
+  display: flex;
+  gap: 0;
+  border-radius: 50px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.SoleiTic-Footer-newsletter-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: white;
+  color: #333;
+}
+
+.SoleiTic-Footer-newsletter-input::placeholder {
+  color: #999;
+}
+
+.SoleiTic-Footer-newsletter-button {
+  padding: 1rem 2rem;
+  background: var(--SoleiTic-Footer-light-primary);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.SoleiTic-Footer-newsletter-button:hover {
+  background: #34495e;
+  transform: translateX(-2px);
+}
+
+.SoleiTic-Footer-newsletter-note {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  color: white;
+  text-align: center;
+}
+
+/* Footer Bottom */
+.SoleiTic-Footer-bottom {
+  border-top: 1px solid transparent;
+  padding: 2rem 0;
+}
+
+.SoleiTic-Footer-light .SoleiTic-Footer-bottom {
+  border-top-color: var(--SoleiTic-Footer-light-border);
+}
+
+.SoleiTic-Footer-dark .SoleiTic-Footer-bottom {
+  border-top-color: var(--SoleiTic-Footer-dark-border);
+}
+
+.SoleiTic-Footer-bottom-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.SoleiTic-Footer-copyright p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.SoleiTic-Footer-payment {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.SoleiTic-Footer-payment-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.SoleiTic-Footer-payment-methods {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.SoleiTic-Footer-payment-method {
+  font-size: 1.25rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.SoleiTic-Footer-payment-method:hover {
+  opacity: 1;
+}
+
+.SoleiTic-Footer-legal {
+  display: flex;
+  gap: 2rem;
+}
+
+.SoleiTic-Footer-legal-link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Footer-light .SoleiTic-Footer-legal-link {
+  color: var(--SoleiTic-Footer-light-text);
+  opacity: 0.8;
+}
+
+.SoleiTic-Footer-dark .SoleiTic-Footer-legal-link {
+  color: var(--SoleiTic-Footer-dark-text);
+  opacity: 0.8;
+}
+
+.SoleiTic-Footer-legal-link:hover {
+  opacity: 1;
+}
+
+.SoleiTic-Footer-light .SoleiTic-Footer-legal-link:hover {
+  color: var(--SoleiTic-Footer-light-accent);
+}
+
+.SoleiTic-Footer-dark .SoleiTic-Footer-legal-link:hover {
+  color: var(--SoleiTic-Footer-dark-accent);
+}
+
+/* Decorative Elements */
+.SoleiTic-Footer-decoration {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--SoleiTic-Footer-gradient);
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.SoleiTic-Footer-decoration-1 {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.SoleiTic-Footer-decoration-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .SoleiTic-Footer-links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .SoleiTic-Footer-content {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .SoleiTic-Footer-main {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  .SoleiTic-Footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .SoleiTic-Footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .SoleiTic-Footer-newsletter {
+    padding: 2rem;
+  }
+  
+  .SoleiTic-Footer-newsletter-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .SoleiTic-Footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .SoleiTic-Footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .SoleiTic-Footer-main {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .SoleiTic-Footer-links {
+    grid-template-columns: 1fr;
+  }
+  
+  .SoleiTic-Footer-newsletter {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+  
+  .SoleiTic-Footer-newsletter-input-group {
+    flex-direction: column;
+    border-radius: 15px;
+  }
+  
+  .SoleiTic-Footer-newsletter-button {
+    border-radius: 0 0 15px 15px;
+  }
+  
+  .SoleiTic-Footer-logo-text {
+    font-size: 2rem;
+  }
+  
+  .SoleiTic-Footer-social {
+    justify-content: center;
+  }
+}
