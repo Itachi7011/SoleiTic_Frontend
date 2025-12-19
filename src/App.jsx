@@ -9,11 +9,13 @@ import "./CSS/Public/Homepage.css"
 import "./CSS/Layout/Navbar.css"
 import "./CSS/Layout/Footer.css"
 import "./CSS/Admin/AdminAuth.css"
+import "./CSS/Admin/AdminDashboard.css"
 
 import Homepage from "./pages/Public/Homepage"
 import Navbar from "./components/layout/Navbar"
 import Footer from "./components/layout/Footer"
 import AdminAuth from "./pages/Admin/Auth/AdminAuth"
+import AdminDashboard from "./pages/Admin/Dashboard/AdminDashboard"
 
 function App() {
 
@@ -29,6 +31,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/admin/auth" element={<AdminAuth />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
         </Routes>
       <Footer/>
 

@@ -1,0 +1,982 @@
+/* Admin Dashboard Styles */
+.SoleiTic-Admin-Dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #e2e8f0;
+}
+
+/* Header */
+.SoleiTic-Admin-Dashboard-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-bottom: 1px solid #334155;
+}
+
+.SoleiTic-Admin-Dashboard-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #b8951c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.SoleiTic-Admin-Dashboard-subtitle {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.SoleiTic-Admin-Dashboard-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.SoleiTic-Admin-Dashboard-refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-refresh-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.SoleiTic-Admin-Dashboard-admin-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+/* Tabs */
+.SoleiTic-Admin-Dashboard-tabs {
+  display: flex;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 2rem;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-tabs {
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+.SoleiTic-Admin-Dashboard-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  color: #64748b;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-tab:hover {
+  color: #475569;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-tab {
+  color: #94a3b8;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-tab:hover {
+  color: #e2e8f0;
+}
+
+.SoleiTic-Admin-Dashboard-tab.active {
+  color: #8b5cf6;
+}
+
+.SoleiTic-Admin-Dashboard-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  border-radius: 3px 3px 0 0;
+}
+
+/* Main Content */
+.SoleiTic-Admin-Dashboard-main {
+  padding: 2rem;
+}
+
+/* Stats Grid */
+.SoleiTic-Admin-Dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.SoleiTic-Admin-Dashboard-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-stat-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.SoleiTic-Admin-Dashboard-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.SoleiTic-Admin-Dashboard-stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SoleiTic-Admin-Dashboard-stat-content {
+  flex: 1;
+}
+
+.SoleiTic-Admin-Dashboard-stat-content h3 {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-stat-content
+  h3 {
+  color: #94a3b8;
+}
+
+.SoleiTic-Admin-Dashboard-stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-stat-value {
+  color: #f8fafc;
+}
+
+.SoleiTic-Admin-Dashboard-stat-change {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.SoleiTic-Admin-Dashboard-stat-change.positive {
+  color: #10b981;
+}
+
+.SoleiTic-Admin-Dashboard-stat-change.negative {
+  color: #ef4444;
+}
+
+/* Content Grid */
+.SoleiTic-Admin-Dashboard-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Cards */
+.SoleiTic-Admin-Dashboard-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.SoleiTic-Admin-Dashboard-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-card-header {
+  border-bottom: 1px solid #334155;
+}
+
+.SoleiTic-Admin-Dashboard-card-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.125rem;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-card-header
+  h3 {
+  color: #f8fafc;
+}
+
+.SoleiTic-Admin-Dashboard-view-all,
+.SoleiTic-Admin-Dashboard-add-btn {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-view-all:hover,
+.SoleiTic-Admin-Dashboard-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+/* Tables */
+.SoleiTic-Admin-Dashboard-table-container {
+  overflow-x: auto;
+}
+
+.SoleiTic-Admin-Dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.SoleiTic-Admin-Dashboard-table th {
+  text-align: left;
+  padding: 1rem;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-table th {
+  color: #94a3b8;
+  border-bottom: 1px solid #334155;
+}
+
+.SoleiTic-Admin-Dashboard-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-table td {
+  border-bottom: 1px solid #334155;
+}
+
+.SoleiTic-Admin-Dashboard-table tr:hover {
+  background: #f8fafc;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-table
+  tr:hover {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+/* Status Badges */
+.SoleiTic-Admin-Dashboard-status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.SoleiTic-Admin-Dashboard-status-badge.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.SoleiTic-Admin-Dashboard-status-badge.processing {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.SoleiTic-Admin-Dashboard-status-badge.shipped {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.SoleiTic-Admin-Dashboard-status-badge.delivered {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-status-badge.pending {
+  background: #78350f;
+  color: #fbbf24;
+}
+
+/* Product Info */
+.SoleiTic-Admin-Dashboard-product-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.SoleiTic-Admin-Dashboard-product-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Stock Level */
+.SoleiTic-Admin-Dashboard-stock-level {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.SoleiTic-Admin-Dashboard-stock-level.critical {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.SoleiTic-Admin-Dashboard-stock-level.low {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Action Buttons */
+.SoleiTic-Admin-Dashboard-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-action-btn {
+  background: #334155;
+  border: 1px solid #475569;
+}
+
+.SoleiTic-Admin-Dashboard-action-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-action-btn:hover {
+  background: #475569;
+}
+
+.SoleiTic-Admin-Dashboard-action-btn.danger {
+  color: #ef4444;
+  border-color: #fee2e2;
+}
+
+.SoleiTic-Admin-Dashboard-action-btn.danger:hover {
+  background: #fee2e2;
+}
+
+/* Top Products */
+.SoleiTic-Admin-Dashboard-top-products {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.SoleiTic-Admin-Dashboard-top-product-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-top-product-item {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.SoleiTic-Admin-Dashboard-top-product-item:hover {
+  background: #f1f5f9;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-top-product-item:hover {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.SoleiTic-Admin-Dashboard-rank {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.SoleiTic-Admin-Dashboard-product-details h4 {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.SoleiTic-Admin-Dashboard-product-details p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-product-details
+  p {
+  color: #94a3b8;
+}
+
+.SoleiTic-Admin-Dashboard-sales-info {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.SoleiTic-Admin-Dashboard-sales-count {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.SoleiTic-Admin-Dashboard-revenue {
+  font-size: 0.875rem;
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* Activities */
+.SoleiTic-Admin-Dashboard-activities {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.SoleiTic-Admin-Dashboard-activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-activity-item {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.SoleiTic-Admin-Dashboard-activity-icon {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b5cf6;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-activity-icon {
+  background: #334155;
+}
+
+.SoleiTic-Admin-Dashboard-activity-content {
+  flex: 1;
+}
+
+.SoleiTic-Admin-Dashboard-activity-content p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.SoleiTic-Admin-Dashboard-activity-time {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-activity-time {
+  color: #94a3b8;
+}
+
+/* Quick Actions */
+.SoleiTic-Admin-Dashboard-quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.SoleiTic-Admin-Dashboard-quick-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem;
+  background: #f8fafc;
+  border: 2px dashed #e2e8f0;
+  border-radius: 12px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-quick-action-btn {
+  background: rgba(30, 41, 59, 0.5);
+  border: 2px dashed #334155;
+  color: #94a3b8;
+}
+
+.SoleiTic-Admin-Dashboard-quick-action-btn:hover {
+  background: white;
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+  transform: translateY(-5px);
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-quick-action-btn:hover {
+  background: #1e293b;
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+}
+
+/* Modal */
+.SoleiTic-Admin-Dashboard-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.SoleiTic-Admin-Dashboard-modal {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-modal {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+.SoleiTic-Admin-Dashboard-modal.large {
+  max-width: 800px;
+}
+
+.SoleiTic-Admin-Dashboard-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-modal-header {
+  border-bottom: 1px solid #334155;
+}
+
+.SoleiTic-Admin-Dashboard-modal-header h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.SoleiTic-Admin-Dashboard-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-modal-close:hover {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-modal-close {
+  color: #94a3b8;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-modal-close:hover {
+  background: #334155;
+  color: #f8fafc;
+}
+
+.SoleiTic-Admin-Dashboard-modal-body {
+  padding: 1.5rem;
+}
+
+/* Form */
+.SoleiTic-Admin-Dashboard-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.SoleiTic-Admin-Dashboard-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-form-group
+  label {
+  color: #e2e8f0;
+}
+
+.SoleiTic-Admin-Dashboard-form-group input,
+.SoleiTic-Admin-Dashboard-form-group select,
+.SoleiTic-Admin-Dashboard-form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: #1f2937;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-form-group
+  input,
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-form-group
+  select,
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-form-group
+  textarea {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #f8fafc;
+}
+
+.SoleiTic-Admin-Dashboard-form-group input:focus,
+.SoleiTic-Admin-Dashboard-form-group select:focus,
+.SoleiTic-Admin-Dashboard-form-group textarea:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.SoleiTic-Admin-Dashboard-upload-area {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-upload-area:hover {
+  border-color: #8b5cf6;
+  background: #f8fafc;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-upload-area {
+  border-color: #475569;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-upload-area:hover {
+  border-color: #8b5cf6;
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.SoleiTic-Admin-Dashboard-upload-area p {
+  margin: 0.5rem 0 0 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-upload-area
+  p {
+  color: #94a3b8;
+}
+
+/* Modal Footer */
+.SoleiTic-Admin-Dashboard-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-modal-footer {
+  border-top: 1px solid #334155;
+}
+
+.SoleiTic-Admin-Dashboard-primary-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.SoleiTic-Admin-Dashboard-secondary-btn {
+  padding: 0.75rem 1.5rem;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-secondary-btn {
+  background: #334155;
+  color: #e2e8f0;
+  border: 1px solid #475569;
+}
+
+.SoleiTic-Admin-Dashboard-secondary-btn:hover {
+  background: #e5e7eb;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark
+  .SoleiTic-Admin-Dashboard-secondary-btn:hover {
+  background: #475569;
+}
+
+/* Footer */
+.SoleiTic-Admin-Dashboard-footer {
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-footer {
+  border-top: 1px solid #334155;
+  color: #94a3b8;
+}
+
+.SoleiTic-Admin-Dashboard-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.SoleiTic-Admin-Dashboard-footer-links span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-online {
+  color: #10b981;
+  font-weight: 600;
+}
+
+/* Loading */
+.SoleiTic-Admin-Dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.SoleiTic-Admin-Dashboard-container.dark .SoleiTic-Admin-Dashboard-loading {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.SoleiTic-Admin-Dashboard-loader {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #8b5cf6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .SoleiTic-Admin-Dashboard-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .SoleiTic-Admin-Dashboard-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .SoleiTic-Admin-Dashboard-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .SoleiTic-Admin-Dashboard-tabs {
+    overflow-x: auto;
+    padding: 0 1rem;
+  }
+
+  .SoleiTic-Admin-Dashboard-tab {
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+  }
+
+  .SoleiTic-Admin-Dashboard-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .SoleiTic-Admin-Dashboard-main {
+    padding: 1rem;
+  }
+
+  .SoleiTic-Admin-Dashboard-modal-overlay {
+    padding: 1rem;
+  }
+
+  .SoleiTic-Admin-Dashboard-footer-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .SoleiTic-Admin-Dashboard-quick-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .SoleiTic-Admin-Dashboard-modal-footer {
+    flex-direction: column;
+  }
+
+  .SoleiTic-Admin-Dashboard-primary-btn,
+  .SoleiTic-Admin-Dashboard-secondary-btn {
+    width: 100%;
+  }
+}
